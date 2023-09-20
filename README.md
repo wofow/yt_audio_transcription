@@ -3,6 +3,7 @@ AKA
 YouTubeTranscribeX
 
 A project i've been working on as a learning experience.
+***CURRENTLY UNFINISHED ROUGHDRAFT FORM***
 
 Description:
 
