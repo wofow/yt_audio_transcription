@@ -1,0 +1,28 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    margin: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Add more styles as needed */

@@ -1,0 +1,57 @@
+<!-- templates/yourappname/transcription_results.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transcription Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'yourappname/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Transcription Results</h1>
+        <form method="post" enctype="multipart/form-data">
+            <!-- ... other form fields ... -->
+            <label for="audio_file">Upload Audio File:</label>
+            <input type="file" id="audio_file" name="audio_file">
+            <!-- ... submit button ... -->
+            {% csrf_token %}
+            <textarea name="transcription" rows="10" cols="50">{{ transcription }}</textarea><br>
+            <!-- templates/yourappname/transcription_results.html -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script>
+            $(document).ready(function() {
+                $('#transcription-textarea').on('input', function() {
+                    var transcriptionText = $(this).val();
+                    // Send the transcription text to the server using AJAX
+                    $.ajax({
+                        url: '{% url 'update_transcription' %}',
+                        type: 'POST',
+                        data: {
+                            'transcription_text': transcriptionText,
+                            'csrfmiddlewaretoken': '{{ csrf_token }}'
+                        },
+                            success: function(response) {
+                            // Update the summary div with the response
+                            $('#transcription-summary').html(response.summary);
+                        }
+                    });
+                });
+            });
+            </script>
+
+            <label for="language">Select Language:</label>
+            <select id="language" name="language">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <!-- Add more language options -->
+            </select><br>
+            <label for="timestamps">Include Timestamps:</label>
+            <input type="checkbox" id="timestamps" name="timestamps"><br>
+            <button type="submit">Save Transcription</button>
+        </form>
+    </div>
+    <h2>Transcription Summary</h2>
+    <p>{{ summary }}</p>
+
+</body>
+</html>

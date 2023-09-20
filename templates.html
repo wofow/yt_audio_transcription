@@ -1,0 +1,31 @@
+<!-- templates/yourappname/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transcription App</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to the Transcription App</h1>
+    <form method="post">
+    {% csrf_token %}
+    <textarea name="transcription" rows="10" cols="50" placeholder="Transcription. . ."></textarea><br>
+    <label for="language">Select Language:</label>
+    <select id="language" name="language">
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <!-- Add more language options -->
+    </select><br>
+    <button type="submit">Save Transcription</button>
+    </form>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="youtube_url">Enter YouTube URL:</label>
+        <input type="text" id="youtube_url" name="youtube_url"><br>
+        <label for="audio_file">Upload Audio File:</label>
+        <input type="file" id="audio_file" name="audio_file"><br>
+        <button type="submit">Transcribe</button>
+    </form>
+</body>
+</html>
