@@ -32,6 +32,4 @@ User-Friendly Interface: The program features an intuitive and user-friendly int
 
 Privacy and Security: YouTubeTranscribeX respects user privacy and data security. It does not store or share video content, ensuring the confidentiality of sensitive information.
 
-Community Support: The YouTubeTranscribeX community provides active support, including tutorials, documentation, and forums, making it easy for users to get started and troubleshoot any issues.
-
 YouTubeTranscribeX empowers content creators, researchers, and video enthusiasts to efficiently convert YouTube audio content into text, enabling easy content indexing, translation, analysis, and accessibility enhancement. Whether you're a YouTuber looking to provide subtitles for your videos, a researcher studying online content, or a journalist transcribing interviews, YouTubeTranscribeX simplifies the transcription process and ensures accurate results, ultimately saving time and enhancing the accessibility of YouTube content.
